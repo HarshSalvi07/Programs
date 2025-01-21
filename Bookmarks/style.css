@@ -1,0 +1,10 @@
+body{text-align:center;
+    background-color:rgb(221, 196, 242)}
+h1{display:inline-block; 
+    border-style:solid;
+    margin:0 auto;
+    padding: 5px;
+    text-align: center;
+    border-radius:8px;
+    color:rgb(0, 24, 86)}
+
