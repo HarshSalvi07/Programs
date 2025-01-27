@@ -1,0 +1,1 @@
+alert("Welcome to the student application form made by developer Harsh")

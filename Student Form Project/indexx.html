@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application Form</title>
+    <h1>Student Application</h1>
+</head>
+<body>
+    <div>
+        <input type="text" id="username" name="Username" placeholder="Enter your username">
+        <label for="username">Enter your name</label>
+    </div>
+    <br>
+    <p1>Select your Gender</p1>
+    <div>
+        <input type="radio" id="Male" name="gender" value="male">
+        <label for="Male">Male</label> 
+        <input type="radio" id="Female" name="gender" value="female"
+        <label for="Female">Female</label>
+    </div>
+    <br>
+    <p1>Select the checkbox if you have passed the examination</p1>
+    <div>
+        <input type="checkbox" id="SSC Pass" name="pass" value="yes">
+        <label for="SSC Pass">SSC</label>
+        <input type="checkbox" id="HSC Pass" name="pass" value="yes">
+        <label for="HSC Pass">HSC</label>
+    </div>
+    <br>
+    <p1>Enter the percentage of SSC Boards</p1>
+    <br>
+    <div>
+        <input type="number" id="percentage ssc" name="percentage" placeholder="Enter your percentage"
+    </div>
+    <br>
+    <br>
+    <p1>Enter the percentage of HSC Boards</p1>
+    <br>
+    <div>
+        <input type="number" id="percentage hsc" name="percentage" placeholder="Enter your percentage"
+    </div>
+    <br>
+    <br>
+    <select name="Type of Student">
+        <option value="Fresher">Fresher</option>
+        <option value="Repeater">Repeater</option>
+        <option value="Dropper">Dropper</option>
+    </select>
+    <br>
+    <br>
+    <textarea rows="10" cols="100">Describe your reason to apply for our college:</textarea>
+    <script src="script.js"></script>
+</body>
+</html>
