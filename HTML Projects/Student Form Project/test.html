@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        background: #0923b7;
+        gap: 5px;
+        padding: 10px;
+      }
+      .right,
+      .left {
+        min-width: 49vw;
+        background: gray;
+      }
+
+      /* .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+      } */
+
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-evenly; */
+        /* justify-content: space-between; */
+        /* justify-content: space-around; */
+        /* justify-content: start; */
+        /* justify-content: end; */
+        /* justify-content: center; */
+      }
+
+      .item {
+        background-color: red;
+        margin: 10px;
+        width: 100px;
+        height: 75px;
+        text-align: center;
+        color: antiquewhite;
+        font-size: large;
+      }
+
+      .item-ab{
+        background-color: orange;
+        margin: 10px;
+        width: 100px;
+        height: 75px;
+        text-align: center;
+        color: antiquewhite;
+        font-size: large;
+        position: absolute;
+        top: 500px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex grid">
+      <div style="flex: 2;" class="item">1</div>
+      <div  style="flex: 6;"  class="item">2</div>
+      <div style="flex: 4;" class="item">3</div>
+      <div style="flex: 4;" class="item">4</div>
+
+
+      <!-- <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div> -->
+    </div>
+    <div class="item-ab">abc</div>
+    <h1>Title</h1>
+    <div class="container">
+      <div class="left">
+        <h2>Left</h2>
+        <div class="first">
+          <h3>First</h3>
+        </div>
+        <div class="second">
+          <h3>Second</h3>
+        </div>
+      </div>
+      <div class="right">
+        <h2>Right</h2>
+      </div>
+    </div>
+  </body>
+</html>
