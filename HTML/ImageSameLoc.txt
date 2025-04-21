@@ -1,0 +1,5 @@
+<html>
+ <body>
+  <img src="landscape.jpg" alt="landscape" height="500px" width="500px" style="vertical-align:bottom">
+ </body>
+</html>

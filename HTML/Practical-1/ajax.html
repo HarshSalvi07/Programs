@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Button click event</title>
+    <style>
+        .button{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <button class="button">Click Me</button>
+    <script>
+        let button= document.querySelector(".button")
+        button.addEventListener("mouseover",function(){
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", "click.txt",true);
+            xhr.onload=function(){
+                document.body.innerHTML += "<br>";
+                document.body.innerHTML += "<br>";
+                document.body.innerHTML += (xhr.response);
+            }
+            xhr.send();
+        });
+    </script>
+    
+</body>
+</html>

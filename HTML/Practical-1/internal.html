@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal javascript</title>
+    <h1>Defining Function</h1>
+    <style>
+        h1{
+            text-align: center;
+            color: aquamarine;
+        }
+        .button{
+            background-color: aquamarine;
+            border: 2px solid;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="myFunction()">Click Me</button>
+    <script>
+        let count=0;
+        function myFunction(){
+            setInterval(function(){
+                alert("Hello World " + count)
+                count++;
+            },3000);
+        }
+    </script>
+    
+</body>
+</html>
