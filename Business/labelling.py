@@ -48,7 +48,7 @@ def show_records():
         for row in rows:
             line = f"|Sr No:{row[0]}|  |DOE:{row[1]}|  |Name:{row[2]}|  |ID:{row[3]}|  |DOP:{row[4]}|  |DOR:{row[5]}|  |Material:{row[6]}|  |Amount:{row[7]}KG| \n"
             record_display.insert(tk.END, line)
-            record_display.insert(tk.END, "-"*120 + "\n")
+            record_display.insert(tk.END, "-"*171 + "\n")
 
     except Exception as e:
         messagebox.showerror("Error", str(e))
@@ -151,12 +151,14 @@ root.title("Business Records Manager")
 
 root.configure(bg='#ddffe1')
 
+root.option_add("*Font", ("Verdana", 11))
+
 #Heading 
 
 heading_frame = tk.Frame(root, bd=5, relief="solid",bg='#e3e3e3')
 heading_frame.grid(row=0, column=0, columnspan=2, padx = 150,pady=15,sticky='w')
 
-heading_label = tk.Label(heading_frame, text = "Records Manager", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
+heading_label = tk.Label(heading_frame, text = "H.V. Imitations Records", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
 heading_label.grid(row = 0, column = 0, columnspan = 2, padx = 150, pady=15,sticky='w')
 
 #Fields
@@ -169,7 +171,7 @@ for i, label_text in enumerate(labels):
     label.grid(row=i+1, column=0, padx=50, pady=6, sticky="w")
 
     entry = tk.Entry(root)
-    entry.grid(row=i+1, column=0, padx=200, pady=6, sticky="w")
+    entry.grid(row=i+1, column=0, padx=225, pady=6, sticky="w")
     entries.append(entry)
 
 entry_sr_no = entries[0]
@@ -182,24 +184,24 @@ entry_material = entries[6]
 entry_amount = entries[7]
 
 label_delete = tk.Label(root, text ="• Enter Serial Number to Delete Record", bg="#ffffff")
-label_delete.grid(row=7, column=0, padx=400, pady=8, sticky="w")
+label_delete.grid(row=7, column=0, padx=500, pady=8, sticky="w")
 
 delete_sr_no_entry = tk.Entry(root)
-delete_sr_no_entry.grid(row=8, column=0, padx=510, pady=8, sticky="w")
+delete_sr_no_entry.grid(row=8, column=0, padx=500, pady=8, sticky="w")
 
 
 label_retrieve = tk.Label(root, text = "• Enter Employee ID to Retrieve Record", bg="#ffffff")
-label_retrieve.grid(row=4, column=0, padx=400, pady=8, sticky="w")
+label_retrieve.grid(row=4, column=0, padx=500, pady=8, sticky="w")
 
 entry_retrieve_id = tk.Entry(root)
-entry_retrieve_id.grid(row=5, column=0, padx=510, pady=8, sticky="w")
+entry_retrieve_id.grid(row=5, column=0, padx=500, pady=8, sticky="w")
 
 
 label_update = tk.Label(root, text="• Enter Serial Number to Update Record", bg="#ffffff")
-label_update.grid(row=1, column=0, padx=400, pady=8, sticky="w")
+label_update.grid(row=1, column=0, padx=500, pady=8, sticky="w")
 
 entry_update_sr_no = tk.Entry(root)
-entry_update_sr_no.grid(row=2, column=0, padx=510, pady=8, sticky="w")
+entry_update_sr_no.grid(row=2, column=0, padx=500, pady=8, sticky="w")
 
 #Buttons
 tk.Button(root, text = "Insert Records", command = insert_records,bg= '#b5ff6c',activebackground='#9eff3f').grid(row = 9, column=0, padx=50, pady=8, sticky="w")
@@ -209,11 +211,11 @@ record_display = tk.Text(root, width = 120, height = 15)
 record_display.grid(row = 10, column = 0, columnspan = 2, pady = 10, sticky='w', padx = 50)
 
 
-tk.Button(root, text="Delete Record", command=delete_record, bg='#ff7c7c', activebackground='#ff4c4c', width = 12).grid(row=8, column=0, padx=400, pady=8, sticky="w")
+tk.Button(root, text="Delete Record", command=delete_record, bg='#ff7c7c', activebackground='#ff4c4c', width = 14).grid(row=9, column=0, padx=500, pady=8, sticky="w")
 
-tk.Button(root, text="Retrieve Record", command=records_retireve, bg='#b5ff6c', activebackground='#9eff3f', width = 12).grid(row=5, column=0, padx=400, pady=8, sticky="w")
+tk.Button(root, text="Retrieve Record", command=records_retireve, bg='#b5ff6c', activebackground='#9eff3f', width = 14).grid(row=6, column=0, padx=500, pady=8, sticky="w")
 
-tk.Button(root,text="Update Record", command=update_record, bg='#b5ff6c', activebackground='#9eff3f', width = 12).grid(row=2, column=0, padx=400, pady=8, sticky="w")
+tk.Button(root,text="Update Record", command=update_record, bg='#b5ff6c', activebackground='#9eff3f', width = 14).grid(row=3, column=0, padx=500, pady=8, sticky="w")
 
 
 root.mainloop()
