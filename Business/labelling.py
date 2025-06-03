@@ -5,7 +5,7 @@ import mysql.connector
 
 conn =  mysql.connector.connect(
     host = "localhost",
-    user = "root",
+    user = "root", 
     password = "root",
     database = "Business",
 )
@@ -69,23 +69,26 @@ def delete_record():
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
+
 def records_retireve():
     try:
         employee_id = int(entry_retrieve_id.get())  
         sql = "SELECT * FROM Records WHERE Employee_ID = %s"      
-        cursor.execute(sql,(employee_id,))
-        row = cursor.fetchone()
+        cursor.execute(sql, (employee_id,))
+        rows = cursor.fetchall()  
 
         record_display.delete(1.0, tk.END)
 
-        if row:
-            line = f"|Sr No:{row[0]}|  |DOE:{row[1]}|  |Name:{row[2]}|  |ID:{row[3]}|  |DOP:{row[4]}|  |DOR:{row[5]}|  |Material:{row[6]}|  |Amount:{row[7]}KG|\n"
-            record_display.insert(tk.END, line)
+        if rows:
+            for row in rows:
+                line = f"|Sr No:{row[0]}|  |DOE:{row[1]}|  |Employee ID:{row[2]}|  |Name:{row[3]}|  |DOP:{row[4]}|  |DOR:{row[5]}|  |Material:{row[6]}|  |Amount:{row[7]}KG|\n"
+                record_display.insert(tk.END, line)
+                record_display.insert(tk.END, "-"*171 + "\n")
         else:
             record_display.insert(tk.END, "No record found for that Employee ID.\n")
         
     except Exception as e:
-        messagebox.showerror("Error",str(e))
+        messagebox.showerror("Error", str(e))
 
 
 def update_record():
@@ -158,7 +161,7 @@ root.option_add("*Font", ("Verdana", 11))
 heading_frame = tk.Frame(root, bd=5, relief="solid",bg='#e3e3e3')
 heading_frame.grid(row=0, column=0, columnspan=2, padx = 150,pady=15,sticky='w')
 
-heading_label = tk.Label(heading_frame, text = "H.V. Imitations Records", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
+heading_label = tk.Label(heading_frame, text = "H.S. Imitations Records", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
 heading_label.grid(row = 0, column = 0, columnspan = 2, padx = 150, pady=15,sticky='w')
 
 #Fields
