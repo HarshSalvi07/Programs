@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix - Watch TV Shows Online,Watch Movies Online</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <span>
+
+          <!-- Main logo of Netflix-->
+          <img width="150vh" src="Images/logo.svg" alt="" />
+        </span>
+
+        <!-- Class for buttons on the top right corner-->
+        <div>
+          <button class="btn">English</button>
+          <button class="btn btn-red-sm">Sign in</button>
+        </div>
+      </nav>
+
+      <!-- Adding a div to add opacity for the background -->
+      <div class="box"></div>
+      
+      <!-- Class for main front text-->
+      <div class="t">
+        <span>Unlimited movies, TV</span>
+        <span>shows and more</span>
+        <span>Starts at ₹149. Cancel at any time.</span>
+        <span>Ready to watch? Enter your email to create or restart your
+          membership.</span>
+
+        <!-- Class for adding placeholder and buttons-->
+        <div class="place">
+          <input type="text" placeholder="Email Address" />
+          <button class="btn btn-red">Get Started ></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adding a horizontal line to divide 2 sections of the page-->
+    <div class="line"></div>
+
+    <!-- Div for adding trending now text separately from movie cards -->
+    <div class="trend">
+      <h2>Trending Now</h2>
+    </div>
+
+    <!-- Adding a wrap to scroll cards horizontally-->
+    <div class="card-scroll-wrapper">
+
+    <!-- Adding left arrow button for navigating horizontally between cards to the left direction-->
+    <div class="arrow left" onclick="scrollCards(-1)">&#10094;</div>
+   
+    <!-- Container to contain all movie cards-->
+    <div class="card-container">
+      <div
+        class="card"
+        style="background-image: url('Images/SquidGame.jpg')"
+      ></div>
+      <div
+        class="card"
+        style="background-image: url('Images/Chaava.jpg')"
+      ></div>
+
+      <div
+        class="card"
+        style="background-image: url('Images/TheRoyals.jpg')"
+      ></div>
+
+      <div
+        class="card"
+        style="background-image: url('Images/Raid2.jpg')"
+      ></div>
+
+      <div
+        class="card"
+        style="background-image: url('Images/Sikandar.jpg')"
+      ></div>
+
+      <div
+        class="card"
+        style="background-image: url('Images/Retro.jpg')"
+      ></div>
+
+      <div
+        class="card"
+        style="background-image: url('Images/RanaN.jpg')"
+      ></div>
+      <div
+        class="card"
+        style="background-image: url('Images/KapilS.jpg')"
+      ></div>
+      <div
+        class="card"
+        style="background-image: url('Images/Hit.jpg')"
+      ></div>
+      <div
+        class="card"
+        style="background-image: url('Images/Jaat.jpg')"
+      ></div> 
+
+      <!-- Adding right arrow button for navigating horizontally between cards to the right direction -->
+      <div class="arrow right" onclick="scrollCards(1)">&#10095;</div>
+      
+    </div>
+    </div>
+
+    <!-- Creating a class for adding a new section for more reasons to join-->
+    <div class="rt">
+    <h>More reasons to join</h></div>
+    <div class="reasons">
+      
+      <!-- Separated classes for each reason to join-->
+      <div class="one">
+        <h3>Enjoy on your TV</h3>
+        <P>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,Blue-ray players and more</P>
+      </div>
+      <div class="two">
+        <h3>Download your shows to watch offline</h3>
+        <P>Save your favourites easily and always have something to watch.</P>
+      </div>
+      <div class="three">
+        <h3>Watch everywhere</h3>
+        <P>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</P>
+      </div>
+      <div class="four">
+        <h3>Create profiles for kids</h3>
+        <P>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</P>
+      </div>
+    </div>
+  </body>
+
+  <!-- Simple javascript for horizontal scroll of the movie cards-->
+  <script>
+  function scrollCards(direction) {
+    const container = document.querySelector('.card-container');
+    const scrollAmount = 1200;
+    container.scrollLeft += direction * scrollAmount;
+  }
+</script>
+</html>

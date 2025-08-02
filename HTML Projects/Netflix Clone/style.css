@@ -1,0 +1,333 @@
+/* Importing font to match Netflix's original website*/
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* Setting default padding and margin for entire page to 0*/
+* {
+  padding: 0px;
+  margin: 0;
+}
+
+/* Setting a default background color for the entire body as black*/
+body {
+  background-color: black;
+}
+
+/* Adding background image of Netflix to the background of main class*/
+.main {
+  background-image: url("Images/IN-en-20250623-TRIFECTA-perspective_ae5833b7-6ce5-4e88-853e-014f38c506f1_large.jpg");
+  height: 100vh;
+  background-position: center center;
+  background-size: max(1000px, 100vw);
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* Controlling the opacity of the background image in main class*/
+.main .box {
+  height: 100vh;
+  width: 100%;
+  opacity: 60%;
+  background-color: black;
+  position: absolute;
+  top: 0;
+}
+
+/* Navbar properties*/
+nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80vw;
+  margin: auto;
+  height: 80px;
+  align-items: center;
+}
+
+/* Netflix logo properties in the navbar*/
+nav img {
+  color: red;
+  position: relative;
+  z-index: 10;
+}
+
+/* Button properties in the top right corner in the navbar*/
+nav button {
+  position: relative;
+  z-index: 10;
+}
+
+/* Main front text properties to match the original website*/
+.t {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  padding-top: 200px;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: relative;
+  z-index: 10;
+  font-family: "Martel Sans", sans-serif;
+  font-weight: 1000;
+  gap: 3px;
+}
+
+/* First child properties of the main front text*/
+.t > :first-child {
+  font-weight: bolder;
+  font-size: 60px;
+  text-align: center;
+}
+
+/* Second child properties of the main front text*/
+.t > :nth-child(2) {
+  font-weight: bolder;
+  font-size: 60px;
+  text-align: center;
+}
+
+/* Third child properties of the main front text*/
+.t > :nth-child(3) {
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 20px;
+  text-align: center;   
+  font-family: "Martel Sans", sans-serif;
+
+}
+
+/* Fourth child properties of the main front text*/
+.t > :nth-child(4) {
+  padding-top: 15px;
+  padding-top: 35px;
+  text-align: center;
+}
+
+/* Properties of the horizontal line in the middle of the page*/
+.line {
+  height: 3px;
+  width: 100%;
+  background-color: red;
+  border-radius: 50px;
+  margin: 0px 0 0 0;
+  position: relative;
+  z-index: 10;
+}
+
+/* Properties for the language button*/
+.btn {
+  padding: 8px 25px;
+  background-color: white;
+  font-weight: 1000;
+  margin-left: 7px;
+  background-color: rgba(101, 101, 101, 0.2);
+  color: white;
+  border-color: white;
+  border-radius: 6px;
+  border-width: 1px;
+}
+
+/* Properties for the "Sign In" button*/
+.btn-red-sm {
+  background-color: red;
+  border: none;
+  border-width: 1px;
+  color: white;
+}
+
+/* Properties for the "Get Started" button*/
+.btn-red {
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 21px;
+}
+
+/* Properties for the placeholder for acquiring email address from the user*/
+.main input {
+  padding: 12px 75px;
+  background-color: white;
+  border-width: 1px;
+  font-size: 20px;
+  border-color: grey;
+  border-radius: 6px;
+  background-color: rgba(101, 101, 101, 0.2);
+  color: white;
+}
+
+/* Properties for the "Trending Now" text*/
+.trend {
+  color: white;
+  padding-top: 30px;
+  padding-left: 380px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-size: x-large;
+  padding-bottom: 20px;
+}
+
+/* Properties for the card container*/
+.card-container {
+  display: flex;
+  gap: 50px;
+  padding: 10px 0;
+  margin-left: 400px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin-right: 330px;
+  padding-bottom: 20px;
+}
+
+/* Property to disable the visibility of the scroll bar*/
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Properties for movie cards*/
+.card {
+  min-width: 220px;
+  height: 320px;
+  flex: auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Property for movie cards to transform on hover*/
+.card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Property for adding positioning for scroll-wrapper*/
+.card-scroll-wrapper {
+  position: relative;
+}
+
+/* Properties for both the arrow buttons*/
+.arrow {
+  margin-left: 350px;
+  margin-right: 280px;
+  position: absolute;
+  height: 100;
+  top: 160px;
+  transform: translateY(-50%);
+  font-size: x-large;
+  color: white;
+  background: rgba(52, 49, 49, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Balancing left arrow positioning*/
+.arrow.left {
+  left: 10px;
+}
+
+/* Balancing right arrow positioning*/
+.arrow.right {
+  right: 10px;
+}
+
+/* Properties for the reasons cards section*/
+.reasons {
+  display: flex;
+  align-items:center;
+  margin-top: 20px;
+  margin-left: 390px;
+  gap: 20px
+}
+
+/* Properties for "More reasons to join" text*/
+.rt {
+  color: white;
+  padding-top: 30px;
+  padding-left: 380px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bolder;
+  font-size: 35px;
+}
+
+/* Properties for first reason card*/
+.one {
+  color: white;
+  align-items:center;
+  background: #8c4256;
+  background: radial-gradient(
+    circle,
+    rgba(140, 66, 86, 1) 0%,
+    rgba(71, 41, 70, 1) 0%,
+    rgba(30, 20, 61, 1) 100%,
+    rgba(36, 7, 51, 1) 100%
+  );
+  height: 290px;
+  width: 260px;
+  border-radius:15px;
+  padding:20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Adjusting elements in the first reason card*/
+.one h3{
+  padding-top: 25px;
+
+}
+
+/* Properties for second reason card*/
+.two {
+  color: white;
+  align-items:center;
+  background: #8c4256;
+  background: radial-gradient(
+    circle,
+    rgba(140, 66, 86, 1) 0%,
+    rgba(71, 41, 70, 1) 0%,
+    rgba(30, 20, 61, 1) 100%,
+    rgba(36, 7, 51, 1) 100%
+  );
+  height: 290px;
+  width: 260px;
+  border-radius:15px;
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Properties for third reason card*/
+.three {
+  color: white;
+  align-items:center;
+  background: #8c4256;
+  background: radial-gradient(
+    circle,
+    rgba(140, 66, 86, 1) 0%,
+    rgba(71, 41, 70, 1) 0%,
+    rgba(30, 20, 61, 1) 100%,
+    rgba(36, 7, 51, 1) 100%
+  );
+  height: 290px;
+  width: 260px;
+  border-radius:15px;
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Properties for fourth reason card*/
+.four {
+  color: white;
+  align-items:center;
+  background: #8c4256;
+  background: radial-gradient(
+    circle,
+    rgba(140, 66, 86, 1) 0%,
+    rgba(71, 41, 70, 1) 0%,
+    rgba(30, 20, 61, 1) 100%,
+    rgba(36, 7, 51, 1) 100%
+  );
+  height: 290px;
+  width: 260px;
+  border-radius:15px;
+  padding:10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
