@@ -81,7 +81,7 @@ def records_retireve():
 
         if rows:
             for row in rows:
-                line = f"|Sr No:{row[0]}|  |DOE:{row[1]}|  |Employee ID:{row[2]}|  |Name:{row[3]}|  |DOP:{row[4]}|  |DOR:{row[5]}|  |Material:{row[6]}|  |Amount:{row[7]}KG|\n"
+                line = f"|Sr No:{row[0]}|  |DOE:{row[1]}|  |Name:{row[2]}|  |Employee ID:{row[3]}|  |DOP:{row[4]}|  |DOR:{row[5]}|  |Material:{row[6]}|  |Amount:{row[7]}KG|\n"
                 record_display.insert(tk.END, line)
                 record_display.insert(tk.END, "-"*171 + "\n")
         else:
@@ -161,7 +161,7 @@ root.option_add("*Font", ("Verdana", 11))
 heading_frame = tk.Frame(root, bd=5, relief="solid",bg='#e3e3e3')
 heading_frame.grid(row=0, column=0, columnspan=2, padx = 150,pady=15,sticky='w')
 
-heading_label = tk.Label(heading_frame, text = "H.S. Imitations Records", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
+heading_label = tk.Label(heading_frame, text = "Business Records", font = ("sans-serif",30,"bold"),bg='#e3e3e3')
 heading_label.grid(row = 0, column = 0, columnspan = 2, padx = 150, pady=15,sticky='w')
 
 #Fields
