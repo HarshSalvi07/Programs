@@ -24,34 +24,34 @@ class DelimiterMatcher:
         #Mapping of closing brackets to their corresponding opening brackets
         self.pairs = {')': '(', '}':'{',']':'['}
 
-        def is_matching(self, code_string):
-            #Create an empty stack to hold opening brackets
-            stack = Stack()
+    def is_matching(self, code_string):
+        #Create an empty stack to hold opening brackets
+        stack = Stack()
 
-            #Traverse each character in teh input string
-            for char in code_string:
+         #Traverse each character in teh input string
+        for char in code_string:
 
-                if char in "([{" :
-                    stack.push(char)
+            if char in "([{" :
+                stack.push(char)
 
-                #If the character is a closing bracket, match it
-                elif char in ")]}":
-                    #Step 1: If the stack is empty, there's no opening bracket
-                    if stack.is_empty():
-                        return False
+            #If the character is a closing bracket, match it
+            elif char in ")]}":
+                #Step 1: If the stack is empty, there's no opening bracket
+                if stack.is_empty():
+                    return False
                     
-                    #Step 2: Pop the last opening bracket from the stack
-                    top = stack.pop()
+                #Step 2: Pop the last opening bracket from the stack
+                top = stack.pop()
 
-                    #Step 3: Get the expected matching opening bracket
-                    expected_opening = self.pairs[char]
+                #Step 3: Get the expected matching opening bracket
+                expected_opening = self.pairs[char]
 
-                    #Step 4: Compare the popped bracket with the expected one
-                    if top != expected_opening:
-                        return False #Mismatch found
+                #Step 4: Compare the popped bracket with the expected one
+                if top != expected_opening:
+                    return False #Mismatch found
                     
-            #Step 5: After processing all characters, if the stack is empty, all brackets matched correctly
-            return stack.is_empty()
+        #Step 5: After processing all characters, if the stack is empty, all brackets matched correctly
+        return stack.is_empty()
 
 class PrefixToPostfixConverter:
     def __init__(self):
@@ -73,7 +73,29 @@ class PrefixToPostfixConverter:
         return stack.pop()
     
 #Test DelimiterMatcher
-
-matcher = DelimiterMatcher()
+match = DelimiterMatcher()
+c_code=""" 
+#include <studio.h> 
+int main(){ 
+    int a=10; 
+    if (a>5){ 
+        printf("hello"); 
+    }else{ 
+        printf("Bye"); 
+    } 
+    return 0; 
+} 
+""" 
+print("Delimiter check (C code):","Balanced" if match.is_matching(c_code) else "Not Balanced")
+ 
+expr1="{[()()]}" 
+print("Delimiter check ({[()()]}):","Balanced" if 
+match.is_matching(expr1) else "Not Balanced") 
+expr2="(())()" 
+print("Delimiter check ((())()):","Balanced" if 
+match.is_matching(expr2) else "Not Balanced") 
+expr3="{[(])}" 
+print("Delimiter check ({[(])}):","Balanced" if 
+match.is_matching(expr3) else "Not Balanced")
 
 

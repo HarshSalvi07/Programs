@@ -1,0 +1,66 @@
+import threading
+import random
+import time
+
+cp = 7
+log = ["empty"] * cp
+inIndex = 0
+outIndex = 0
+
+mutex = threading.Semaphore(1)
+emptyState = threading.Semaphore(cp)
+fullState = threading.Semaphore(0)
+
+sampleLog = ["test","test2","test3"]
+
+class Producer(threading.Thread):
+    def run(self):
+    
+        global cp,inIndex,mutex,log,emptyState,fullState
+        logsProduce = 0
+
+        while logsProduce < cp:
+            emptyState.acquire()
+            mutex.acquire()
+
+            Msgproduce = random.choice(sampleLog)
+            log[inIndex] = Msgproduce
+            inIndex = (inIndex + 1) % cp
+            print(f"[Producer] generated: {Msgproduce}")
+
+            fullState.release()
+            mutex.release()
+
+            time.sleep(random.uniform(0.5,1))
+            logsProduce += 1
+        
+
+class Consumer(threading.Thread):
+    def run(self):
+
+        global cp,outIndex,mutex,log,emptyState,fullState
+        logsConsumed = 0
+
+        while logsConsumed < cp:
+            fullState.acquire()
+            mutex.acquire()
+
+            MsgConsumed = log[outIndex]
+            log[outIndex] = "empty"
+            outIndex = (outIndex + 1) % cp
+            print(f"[Consumer] consumed: {MsgConsumed}")
+
+            emptyState.release()
+            mutex.release()
+
+            time.sleep(random.uniform(0.5,1))
+            logsConsumed += 1
+ 
+producerThread = Producer()
+consumerThread = Consumer()
+
+producerThread.start()
+consumerThread.start()
+
+producerThread.join()
+consumerThread.join()
