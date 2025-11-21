@@ -1,0 +1,24 @@
+{
+  "name": "harsh",
+  "version": "1.0.0",
+  "description": "testrun",
+  "homepage": "https://github.com/HarshSalvi07/Programs#readme",
+  "bugs": {
+    "url": "https://github.com/HarshSalvi07/Programs/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarshSalvi07/Programs.git"
+  },
+  "license": "ISC",
+  "author": "harsh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  },
+  "devDependencies": {}
+}
