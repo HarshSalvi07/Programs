@@ -1,0 +1,89 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(blue.jpg);
+}
+
+h2{
+    color: rgb(0, 0, 0);
+    margin-bottom: 5rem;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #1a73e8;
+    color: white;
+}
+
+
+
+.nav a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.courses {
+    padding: 40px 20px;
+    margin-top: 0rem;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a73e8;
+    color: white;
+}
+
+.video-section {
+    text-align: center;
+    padding: 40px 20px;
+    display:flex;
+    margin-right: 6rem;}
+
+.video-section video {
+    max-width: 33%;
+    border-radius: 10px;
+    margin-left: 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    
+}
+
+h2{
+    display: block;
+    margin-bottom: 5rem;
+    text-align: center ;
+}

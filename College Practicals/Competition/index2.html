@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Dev Course — 15 Lessons + Progress Tracker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .lesson {
+        background: #fff;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 10px;
+        border-left: 6px solid #007bff;
+      }
+      .completed {
+        border-left-color: #28a745 !important;
+        opacity: 0.8;
+      }
+      button {
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      pre {
+        background: #272822;
+        color: #f8f8f2;
+        padding: 15px;
+        border-radius: 8px;
+        overflow-x: auto;
+      }
+      .check {
+        color: #28a745;
+        font-weight: bold;
+      }
+      .progress-bar {
+        width: 100%;
+        height: 20px;
+        background: #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+      .progress-fill {
+        height: 100%;
+        background: #28a745;
+        transition: width 0.3s;
+      }
+      .quiz {
+        margin-top: 15px;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 5px;
+      }
+      .quiz input[type="radio"] {
+        margin-right: 5px;
+      }
+      .quiz button {
+        margin-top: 10px;
+      }
+      .correct {
+        color: #28a745;
+      }
+      .incorrect {
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Web Development Lessons (15) — Progress Tracker</h1>
+
+    <div id="progress-summary">
+      <p>
+        Completed: <span id="completed-count">0</span>/15 (<span
+          id="completed-percent"
+          >0</span
+        >%)
+      </p>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+
+    <div id="lessons"></div>
+    <script src ="script2.js"></script>
+  </body>
+</html>

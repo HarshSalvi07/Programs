@@ -1,0 +1,221 @@
+
+const lessons = [
+    {
+        title: "1. HTML Bio Page",
+        code: `<h1>My Bio</h1>
+<p>Hello, I'm a web developer!</p>
+<img src="me.jpg" alt="My Photo">
+<a href="https://example.com">My Website</a>`,
+        quiz: {
+            question: "What HTML tag is used to create a hyperlink?",
+            options: ["link", "a", "href", "url"],
+            correct: 1
+        }
+    },
+    {
+        title: "2. CSS Profile Card",
+        code: `.card {
+    width: 300px; padding: 20px; border-radius: 10px;
+    box-shadow: 0 0 10px #aaa; background: white;
+}`,
+        quiz: {
+            question: "Which CSS property is used to add shadows to elements?",
+            options: ["shadow", "box-shadow", "text-shadow", "element-shadow"],
+            correct: 1
+        }
+    },
+    {
+        title: "3. Flexbox Navbar",
+        code: `nav {
+    display: flex; justify-content: space-between;
+}`,
+        quiz: {
+            question: "What does 'justify-content: space-between' do in flexbox?",
+            options: ["Centers items", "Spaces items evenly with space at ends", "Spaces items evenly", "Aligns to start"],
+            correct: 1
+        }
+    },
+    {
+        title: "4. JS Counter",
+        code: `let count = 0;
+function inc() { count++; document.getElementById("num").innerText = count; }`,
+        quiz: {
+            question: "What does the '++' operator do?",
+            options: ["Decrements by 1", "Increments by 1", "Multiplies by 2", "Divides by 2"],
+            correct: 1
+        }
+    },
+    {
+        title: "5. Light/Dark Toggle",
+        code: document.body.classList.toggle("dark");,
+        quiz: {
+            question: "What method toggles a CSS class on an element?",
+            options: ["addClass", "removeClass", "toggleClass", "classList.toggle"],
+            correct: 3
+        }
+    },
+    {
+        title: "6. JS To-Do List",
+        code: tasks.push(input.value); renderList();,
+        quiz: {
+            question: "What does the 'push' method do to an array?",
+            options: ["Removes last item", "Adds item to end", "Removes first item", "Adds item to start"],
+            correct: 1
+        }
+    },
+    {
+        title: "7. Fetch API Example",
+        code: `fetch("https://jsonplaceholder.typicode.com/posts")
+  .then(res => res.json()).then(data => console.log(data));`,
+        quiz: {
+            question: "What does 'fetch' return?",
+            options: ["JSON data", "A Promise", "A string", "An array"],
+            correct: 1
+        }
+    },
+    {
+        title: "8. Save Theme to localStorage",
+        code: localStorage.setItem("theme", "dark");,
+        quiz: {
+            question: "What is localStorage used for?",
+            options: ["Storing data temporarily", "Storing data persistently in browser", "Sending data to server", "Storing cookies"],
+            correct: 1
+        }
+    },
+    {
+        title: "9. Flask Server",
+        code: `from flask import Flask
+app = Flask(_name_)
+@app.route("/")
+def home():
+    return "Hello!"`,
+        quiz: {
+            question: "What is Flask?",
+            options: ["A JavaScript framework", "A Python web framework", "A CSS library", "A database"],
+            correct: 1
+        }
+    },
+    {
+        title: "10. Flask + Template",
+        code: return render_template("hello.html", name=user),
+        quiz: {
+            question: "What does 'render_template' do in Flask?",
+            options: ["Renders HTML template", "Sends JSON response", "Redirects to URL", "Handles form data"],
+            correct: 0
+        }
+    },
+    {
+        title: "11. PHP Form Handler",
+        code: <?php echo $_POST['name']; ?>,
+        quiz: {
+            question: "What is $_POST used for in PHP?",
+            options: ["Getting URL parameters", "Getting form data", "Setting cookies", "Including files"],
+            correct: 1
+        }
+    },
+    {
+        title: "12. SQL CRUD",
+        code: CREATE TABLE users(id INTEGER, name TEXT);,
+        quiz: {
+            question: "What does CRUD stand for?",
+            options: ["Create, Read, Update, Delete", "Connect, Run, Update, Drop", "Code, Run, Update, Debug", "Create, Run, Update, Display"],
+            correct: 0
+        }
+    },
+    {
+        title: "13. Express API",
+        code: app.get("/api/time", (req,res)=>res.json({time:Date.now()}));,
+        quiz: {
+            question: "What is Express.js?",
+            options: ["A database", "A Node.js web framework", "A CSS preprocessor", "A testing library"],
+            correct: 1
+        }
+    },
+    {
+        title: "14. React Component",
+        code: function WeatherCard(props){ return <h3>{props.city}</h3>; },
+        quiz: {
+            question: "What are 'props' in React?",
+            options: ["Component state", "Component properties", "Component methods", "Component events"],
+            correct: 1
+        }
+    },
+    {
+        title: "15. Login Mockup",
+        code: if(email && pw){ alert("Login Successful"); },
+        quiz: {
+            question: "What does '&&' mean in JavaScript?",
+            options: ["Or", "And", "Not", "Equals"],
+            correct: 1
+        }
+    }
+];
+
+// Load saved progress
+let completed = JSON.parse(localStorage.getItem("progress")) || {};
+let quizAnswers = JSON.parse(localStorage.getItem("quizAnswers")) || {};
+
+function toggleComplete(i) {
+    completed[i] = !completed[i];
+    localStorage.setItem("progress", JSON.stringify(completed));
+    loadLessons();
+}
+
+function submitQuiz(i, selected) {
+    const correct = selected == lessons[i].quiz.correct;
+    quizAnswers[i] = { selected, correct };
+    localStorage.setItem("quizAnswers", JSON.stringify(quizAnswers));
+    updateProgress();
+    loadLessons();
+}
+
+function updateProgress() {
+    const total = lessons.length;
+    const completedCount = Object.values(completed).filter(Boolean).length;
+    const quizCorrectCount = Object.values(quizAnswers).filter(answer => answer.correct).length;
+    const overallCompleted = Math.min(completedCount + quizCorrectCount, total);
+    const percent = Math.round((overallCompleted / total) * 100);
+
+    document.getElementById("completed-count").textContent = overallCompleted;
+    document.getElementById("completed-percent").textContent = percent;
+    document.getElementById("progress-fill").style.width = ${percent}%;
+}
+
+function loadLessons() {
+    const container = document.getElementById("lessons");
+    container.innerHTML = "";
+
+    lessons.forEach((lesson, i) => {
+        const div = document.createElement("div");
+        div.className = "lesson" + (completed[i] ? " completed" : "");
+
+        let quizHtml = "";
+        if (lesson.quiz) {
+            const answered = quizAnswers[i];
+            const optionsHtml = lesson.quiz.options.map((opt, idx) =>
+                <label><input type="radio" name="quiz${i}" value="${idx}" ${answered && answered.selected == idx ? 'checked' : ''} ${answered ? 'disabled' : ''}> ${opt}</label><br>
+            ).join("");
+            const feedback = answered ? (answered.correct ? '<span class="correct">Correct!</span>' : '<span class="incorrect">Incorrect. Try again.</span>') : '';
+            quizHtml = `
+                <div class="quiz">
+                    <p><strong>Quiz:</strong> ${lesson.quiz.question}</p>
+                    ${optionsHtml}
+                    ${answered ? feedback : <button onclick="const sel = document.querySelector('input[name=quiz${i}]:checked'); if(sel) submitQuiz(${i}, sel.value);">Submit Answer</button>}
+                </div>
+            `;
+        }
+
+        div.innerHTML = `
+            <h2>${lesson.title} ${completed[i] ? "<span class='check'>✔</span>" : ""}</h2>
+            <pre>${lesson.code}</pre>
+            <button onclick="toggleComplete(${i})">
+                ${completed[i] ? "Mark as Incomplete" : "Mark as Complete"}
+            </button>
+            ${quizHtml}
+        `;
+        container.appendChild(div);
+    });
+    updateProgress();
+}
+
+loadLessons();

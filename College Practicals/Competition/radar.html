@@ -1,0 +1,46 @@
+HTML
+<div class="chart-container">
+    <h2>Skill Strength Radar Chart</h2>
+    <canvas id="skillRadarChart"></canvas>
+
+<style>
+body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        background: #f4f4f4;
+    }
+    h2 {
+        color: #333;
+        margin-top: 10px;
+    }
+    .chart-container {
+        width: 400px;
+        height: 450px;
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }</style>
+<script>
+new Chart(document.getElementById('skillRadarChart'), {
+    type: 'radar',
+    data: {
+        labels: ['Reading', 'Writing', 'Listening', 'Speaking', 'Grammar'],
+        datasets: [{
+            label: 'Skill Score',
+            data: [80, 65, 70, 55, 75],
+            backgroundColor: 'rgba(16,185,129,0.2)',
+            borderColor: '#10b981',
+            pointBackgroundColor: '#10b981'
+        }]
+    },
+    options: {
+        scales: {
+            r: {
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
+        }
+    }
+});</script>
