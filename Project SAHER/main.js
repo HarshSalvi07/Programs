@@ -24,7 +24,7 @@ app.post("/addBooks",(req,res)=>{
     };
 
     Books.push(newBook);
-    console.log("New book ",newBook.title," has been added successfully")
+    console.log("New book -",newBook.title,"has been added successfully")
  
     return res.json(newBook)
 

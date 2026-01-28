@@ -1,0 +1,15 @@
+nav{
+    display: flex;
+}
+ul{
+    display: flex;
+    margin-left: 80rem;
+}
+
+li{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-right: 2rem;
+    
+}

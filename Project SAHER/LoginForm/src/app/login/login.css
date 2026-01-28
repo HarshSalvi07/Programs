@@ -1,0 +1,23 @@
+.container{
+    display:inline-block;
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 2rem;
+    background: rgb(249, 255, 170);
+    margin-top: 5rem;
+    margin-left: 40rem;
+}
+ 
+h1{
+    border: 2px solid black;
+    border-radius: .75rem;
+    padding: 1rem;
+    background: #ffffff;
+}
+.lgn{
+    display: block;
+    padding:.5rem;
+    margin-top: 1rem;
+    margin-left: 7.5rem;
+    border-radius: 5rem;
+}
