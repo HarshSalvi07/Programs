@@ -85,6 +85,11 @@ body {
   cursor: pointer;
 }
 
+/* All sections*/
+.section {
+  height: 100vh;
+}
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -165,28 +170,29 @@ body {
 }
 
 .about-content .left-about {
-  background: rgb(1, 170, 170);
+  background: rgb(1, 109, 109);
   color: white;
-  padding: 7rem;
+  padding: 8rem;
   justify-content: space-evenly;
 }
 
 .about-content .left-about h1 {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 .about-content .left-about span {
   color: #ffffff;
+  font-size: larger;
   opacity: 85%;
 }
 
 .about-content .right-about {
-  background: #ccffb6;
+  background: #a7ff81;
   color: rgb(0, 0, 0);
-  padding: 0.5rem;
+  padding: 8rem;
   padding-top: 6rem;
   justify-content: space-evenly;
 }
@@ -212,6 +218,7 @@ body {
   color: rgb(0, 0, 0);
   padding: 5rem;
   justify-items: center;
+  font-size: larger;
   opacity: 85%;
 }
 /*Marquee */
@@ -240,6 +247,7 @@ body {
 .box-container {
   display: flex;
   width: 100%;
+  gap: 1rem;
   padding-bottom: 2rem;
 }
 
@@ -247,8 +255,8 @@ body {
   flex: 1;
   padding: 5rem;
   border: 1px solid #ffffff;
-  box-shadow: #00ffa6 0px 4px 8px;
   border-radius: 10px;
+  height: 70vh;
   text-align: center;
   color: white;
   
@@ -258,29 +266,29 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(255, 255, 255);
   font-weight: 900;
-  font-size: 2.2rem;
-  text-shadow: rgba(255, 255, 255, 0.352) 0.1em 0.1em 0.1em;
+  font-size: 2.5rem;
   margin-bottom: 25px;
 }
 
 .box p{
   font-family:'Times New Roman', Times, serif;
   color: rgb(255, 255, 255);
+  padding-top: 1rem;
   opacity: 85%;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
  
 }
 
 .box1 {
-  background: seagreen;
+  background: rgb(78, 165, 87);
 }
 
 .box2 {
-  background: seagreen;
+  background: rgb(57, 180, 69);
 }
 
 .box3 {
-  background: seagreen;
+  background: rgb(35, 180, 49);
 }
 
 @keyframes scroll {
@@ -352,6 +360,7 @@ font-family: "Playfair Display", serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
+  height: 75vh;
   margin-top: 30px;
 }
 
@@ -365,54 +374,47 @@ font-family: "Playfair Display", serif;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(0, 0, 0);
   font-weight: 900;
+  font-size: xx-large;
   margin-bottom: 15px;
 }
 
 .cards p {
   color: rgb(0, 0, 0);
   font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  padding-top: 2rem;
   font-weight: 500;
   opacity: 95%;
 }
 .cards .card:nth-child(1) {
   padding: 5rem;
-  background: #ffa9a9;
+  background: #ffd04d;
   border-radius: 10px;
-  box-shadow:
-    #ff9292 0px 4px 8px,
-    #ff9292 0px 6px 20px;
   transition: transform 0.3s ease;
 }
 
 .cards .card:nth-child(2) {
   padding: 5rem;
-  background: #8ef7e0;
+  background: #ff2a4e;
   border-radius: 10px;
-  box-shadow:
-    #92ffff 0px 4px 8px,
-    #92efff 0px 6px 20px;
+
 
   transition: transform 0.3s ease;
 }
 
 .cards .card:nth-child(3) {
   padding: 5rem;
-  background: #fff79f;
+  background: #2a51ff;
   border-radius: 10px;
-  box-shadow:
-    #fffd92 0px 4px 8px,
-    #fffa92 0px 6px 20px;
+
 
   transition: transform 0.3s ease;
 }
 
 .cards .card:nth-child(4) {
   padding: 5rem;
-  background: #9ff97b;
+  background: #9317ff;
   border-radius: 10px;
-  box-shadow:
-    #adff92 0px 4px 8px,
-    #a4ff92 0px 6px 20px;
 
   transition: transform 0.3s ease;
 }
